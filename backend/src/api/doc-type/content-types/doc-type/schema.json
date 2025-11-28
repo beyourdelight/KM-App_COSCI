@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "doc_types",
+  "info": {
+    "singularName": "doc-type",
+    "pluralName": "doc-types",
+    "displayName": "docType"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "knowledge_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::knowledge-item.knowledge-item",
+      "mappedBy": "docType"
+    }
+  }
+}
