@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_media_video_sources",
+  "info": {
+    "displayName": "videoSource"
+  },
+  "options": {},
+  "attributes": {
+    "sourceType": {
+      "type": "enumeration",
+      "enum": [
+        "NAS",
+        "External",
+        "Direct"
+      ]
+    },
+    "nasPath": {
+      "type": "string"
+    },
+    "externalUrl": {
+      "type": "string"
+    },
+    "directFile": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

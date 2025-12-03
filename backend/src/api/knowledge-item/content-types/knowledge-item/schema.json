@@ -1,0 +1,80 @@
+{
+  "kind": "collectionType",
+  "collectionName": "knowledge_items",
+  "info": {
+    "singularName": "knowledge-item",
+    "pluralName": "knowledge-items",
+    "displayName": "knowledgeItem"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "coverImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "docType": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::doc-type.doc-type",
+      "inversedBy": "knowledge_items"
+    },
+    "relatedMajors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::major.major"
+    },
+    "content": {
+      "type": "blocks"
+    },
+    "pageLength": {
+      "type": "integer"
+    },
+    "Duration": {
+      "type": "integer"
+    },
+    "Languages": {
+      "type": "enumeration",
+      "enum": [
+        "TH",
+        "EN"
+      ]
+    },
+    "users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "bookmarks"
+    },
+    "attachments": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "videoList": {
+      "type": "component",
+      "component": "media.video-source",
+      "repeatable": true
+    }
+  }
+}

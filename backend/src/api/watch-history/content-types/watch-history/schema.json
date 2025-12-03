@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "watch_histories",
+  "info": {
+    "singularName": "watch-history",
+    "pluralName": "watch-histories",
+    "displayName": "watchHistory"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "knowledgeItem": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::knowledge-item.knowledge-item"
+    },
+    "viewAt": {
+      "type": "datetime"
+    }
+  }
+}
