@@ -51,3 +51,19 @@
   })(window.jQuery);
 
 
+function triggerTab(tabId) {
+    // 1. หาปุ่ม Tab ด้วย ID
+    var tabTrigger = document.querySelector('#' + tabId); 
+    
+    // 2. ถ้าเจอปุ่ม ให้สั่งกดและเปลี่ยน Tab
+    if (tabTrigger) {
+        // เรียกใช้ Bootstrap Tab API
+        var tabInstance = new bootstrap.Tab(tabTrigger);
+        tabInstance.show();
+        
+        // (Optional) สั่งให้เลื่อนหน้าจอลงมาหา Tab นั้น
+        tabTrigger.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } else {
+        console.error('ไม่พบ Tab ID: ' + tabId);
+    }
+}
