@@ -11,7 +11,7 @@ https://templatemo.com/tm-590-topic-listing
 -----------------------------------------*/
 :root {
   --white-color:                  #FFFFFF;
-  --primary-color:                #1277C2;
+  --primary-color:                #0067b6;
   --secondary-color:              #1A4B7C;
   --section-bg-color:             #DEDEDE;
   --custom-btn-bg-color:          #1277C2;
@@ -162,7 +162,6 @@ strong {
 }
 
 .tab-content {
-  background-color: var(--white-color);
   border-radius: var(--border-radius-medium);
 }
 
@@ -173,7 +172,7 @@ strong {
 }
 
 .nav-tabs .nav-link {
-  border-radius: 0;
+  border-radius: 10px 10px 0 0;
   border-top: 0;
   border-right: 0;
   border-left: 0;
@@ -194,7 +193,7 @@ strong {
 .nav-tabs .nav-link:focus, 
 .nav-tabs .nav-link:hover {
   border-bottom-color: var(--primary-color);
-  color: var(--primary-color);
+  /* color: var(--primary-color); */
 }
 
 
@@ -229,7 +228,7 @@ strong {
 .custom-border-btn {
   background: transparent;
   border: 2px solid var(--custom-btn-bg-color);
-  color: var(--custom-btn-bg-color);
+  color: var(--white-color);
 }
 
 .custom-border-btn:hover {
@@ -271,6 +270,8 @@ background-image: linear-gradient(15deg, var(--secondary-color) 0%, #B0E0E6 100%
 .site-header .custom-icon:hover {
   color: var(--secondary-color);
 }
+
+
 
 
 /*---------------------------------------
@@ -326,6 +327,7 @@ background-image: linear-gradient(15deg, var(--secondary-color) 0%, #B0E0E6 100%
 .navbar-nav .nav-link.active, 
 .navbar-nav .nav-link:hover {
   color: var(--primary-color);
+
 }
 
 .navbar .dropdown-menu {
@@ -409,6 +411,11 @@ background-image: linear-gradient(15deg, var(--secondary-color) 0%, #B0E0E6 100%
   text-align: center;
   transition: all 0.3s ease;
 }
+.navbar-icon.bi-search {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
 
 .navbar-icon:hover {
   background: var(--primary-color);
@@ -485,7 +492,11 @@ background-image: linear-gradient(15deg, var(--secondary-color) 0%, #B0E0E6 100%
 /*---------------------------------------
   HERO        
 -----------------------------------------*/
-.hero-section {
+/*---------------------------------------
+  HERO        
+-----------------------------------------*/
+.hero-section,
+.explore-section {
   background-image: linear-gradient(15deg, var(--secondary-color) 0%, #B0E0E6 100%);
   position: relative;
   overflow: hidden;
@@ -518,8 +529,9 @@ background-image: linear-gradient(15deg, var(--secondary-color) 0%, #B0E0E6 100%
   color: var(--white-color);
   max-width: 150px;
 }
-
-
+.hero-section button[type="submit"]:hover {
+  background-color: var(--secondary-color);
+}
 /*---------------------------------------
   TOPICS              
 -----------------------------------------*/
@@ -542,6 +554,9 @@ background-image: linear-gradient(15deg, var(--secondary-color) 0%, #B0E0E6 100%
   padding: 30px;
   transition: all 0.3s ease;
   height: 100%;
+}
+.custom-block p {
+    min-height: 50px; 
 }
 
 .custom-block:hover {
@@ -676,10 +691,12 @@ blockquote {
 
 .custom-block-topics-listing {
   height: inherit;
+
 }
 
 .custom-block-topics-listing .custom-block-image {
   width: 200px;
+  height: 150px;
 }
 
 
@@ -928,6 +945,10 @@ blockquote {
 -----------------------------------------*/
 .site-footer {
   border-bottom: 10px solid var(--secondary-color);
+  background-color: var(--primary-color);
+  color: var(--dark-color);
+  font-size: var(--copyright-font-size);
+  font-weight: var(--font-weight-medium);
   position: relative;
 }
 
@@ -945,7 +966,7 @@ blockquote {
 }
 
 .site-footer-title {
-  color: var(--primary-color); 
+  color: var(--dark-color); 
 }
 
 .site-footer .dropdown-menu {
@@ -984,6 +1005,7 @@ blockquote {
 
 .site-footer-links {
   padding-left: 0;
+  color: var(--dark-color);
 }
 
 .site-footer-link-item {
@@ -993,7 +1015,7 @@ blockquote {
 }
 
 .site-footer-link {
-  color: var(--secondary-color);
+  color: var(--white-color);
   font-size: var(--copyright-font-size);
   font-weight: var(--font-weight-medium);
   line-height: normal;
@@ -1033,8 +1055,31 @@ blockquote {
 }
 
 .social-icon-link:hover {
-  background: var(--primary-color);
+  background: var(--dark-color);
   color: var(--white-color);
+}
+.course-card {
+    border-radius: 12px;
+    background: #fff;
+    overflow: hidden;
+    transition: 0.25s;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.15);
+}
+
+.course-content h6 {
+    font-size: 16px;
+}
+
+.rating {
+    color: #f4c542; /* สีดาว */
+}
+
+.price {
+    font-size: 18px;
 }
 
 

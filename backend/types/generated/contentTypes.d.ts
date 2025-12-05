@@ -483,6 +483,10 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
+    knowledge_items: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::knowledge-item.knowledge-item'
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -618,6 +622,7 @@ export interface ApiKnowledgeItemKnowledgeItem
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
+    category: Schema.Attribute.Relation<'manyToOne', 'api::category.category'>;
     content: Schema.Attribute.Blocks;
     coverImage: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
@@ -647,6 +652,7 @@ export interface ApiKnowledgeItemKnowledgeItem
       'plugin::users-permissions.user'
     >;
     videoList: Schema.Attribute.Component<'media.video-source', true>;
+    views: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
   };
 }
 

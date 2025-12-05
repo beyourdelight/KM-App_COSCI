@@ -75,6 +75,16 @@
       "type": "component",
       "component": "media.video-source",
       "repeatable": true
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "knowledge_items"
+    },
+    "views": {
+      "type": "integer",
+      "default": 0
     }
   }
 }

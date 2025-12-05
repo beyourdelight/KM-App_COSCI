@@ -26,6 +26,12 @@
       "relation": "manyToOne",
       "target": "api::course.course",
       "inversedBy": "categories"
+    },
+    "knowledge_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::knowledge-item.knowledge-item",
+      "mappedBy": "category"
     }
   }
 }
