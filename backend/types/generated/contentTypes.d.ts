@@ -483,6 +483,10 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
+    knowledge_items: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::knowledge-item.knowledge-item'
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -568,6 +572,40 @@ export interface ApiDocTypeDocType extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
+  collectionName: 'globals';
+  info: {
+    displayName: 'global';
+    pluralName: 'globals';
+    singularName: 'global';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    footer_logo: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::global.global'
+    > &
+      Schema.Attribute.Private;
+    navbar_logo: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    site_name: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiKnowledgeItemKnowledgeItem
   extends Struct.CollectionTypeSchema {
   collectionName: 'knowledge_items';
@@ -584,6 +622,7 @@ export interface ApiKnowledgeItemKnowledgeItem
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
+    category: Schema.Attribute.Relation<'manyToOne', 'api::category.category'>;
     content: Schema.Attribute.Blocks;
     coverImage: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
@@ -613,6 +652,7 @@ export interface ApiKnowledgeItemKnowledgeItem
       'plugin::users-permissions.user'
     >;
     videoList: Schema.Attribute.Component<'media.video-source', true>;
+    views: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
   };
 }
 
@@ -1198,6 +1238,7 @@ declare module '@strapi/strapi' {
       'api::category.category': ApiCategoryCategory;
       'api::course.course': ApiCourseCourse;
       'api::doc-type.doc-type': ApiDocTypeDocType;
+      'api::global.global': ApiGlobalGlobal;
       'api::knowledge-item.knowledge-item': ApiKnowledgeItemKnowledgeItem;
       'api::major.major': ApiMajorMajor;
       'api::watch-history.watch-history': ApiWatchHistoryWatchHistory;

@@ -45,12 +45,12 @@ async function loadTopicDetail() {
 
         // B. (ตัดส่วน Major ออกแล้วตามที่ขอ) ✂️
 
-        // C. ส่วนรูปภาพปก (Cover Image)
-        const imageEl = document.querySelector('.topics-detail-block-image');
-        if (imageEl && item.coverImage) {
-            imageEl.src = `${CONFIG.MEDIA_URL}${item.coverImage.url}`;
-            imageEl.alt = item.title;
-        }
+        // // C. ส่วนรูปภาพปก (Cover Image)
+        // const imageEl = document.querySelector('.topics-detail-block-image');
+        // if (imageEl && item.coverImage) {
+        //     imageEl.src = `${CONFIG.MEDIA_URL}${item.coverImage.url}`;
+        //     imageEl.alt = item.title;
+        // }
 
         // D. ส่วนเนื้อหา (Rich Text / Content) 📝
         // แปลงจาก Blocks JSON -> HTML
