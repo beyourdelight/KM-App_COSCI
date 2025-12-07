@@ -66,10 +66,10 @@
       "inversedBy": "users",
       "configurable": false
     },
-    "firstname": {
+    "first_name": {
       "type": "string"
     },
-    "lastname": {
+    "last_name": {
       "type": "string"
     },
     "bookmarks": {
@@ -77,6 +77,18 @@
       "relation": "manyToMany",
       "target": "api::knowledge-item.knowledge-item",
       "inversedBy": "users"
+    },
+    "buasri_id": {
+      "type": "string"
+    },
+    "position": {
+      "type": "string"
+    },
+    "favorites": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::knowledge-item.knowledge-item",
+      "inversedBy": "favoritedBy"
     }
   }
 }

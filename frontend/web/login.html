@@ -28,22 +28,19 @@
                         <h2>Login to your <span>Account</span></h2>
                     </div>
                     <p class="sub-text">Don't have an account? <a href="register.html">Create one here</a></p>
-
-                    <form>
+        
+                    <form id="loginForm">
                         <div class="input-group">
-                            <input type="text" placeholder="Your Name" required>
+                            <input type="text" id="loginIdentifier" placeholder="รหัสบัวศรี (Buasri ID) หรือ อีเมล" required>
                         </div>
                         <div class="input-group">
-                            <input type="password" placeholder="Your Password" required>
+                            <input type="password" id="loginPassword" placeholder="Password" required>
                         </div>
-
+        
                         <div class="actions">
-                            <label class="checkbox-container">
-                                <input type="checkbox"> Remember me
-                            </label>
                             <a href="forgotpass.html" class="forgot-pass">Forgot Password?</a>
                         </div>
-
+        
                         <button type="submit" class="btn-primary">Login</button>
                     </form>
                 </div>
@@ -55,5 +52,6 @@
     <script src="js/load-global.js"></script> 
     
     <script src="js/main.js"></script>
+    <script src="js/login.js"></script>
 </body>
 </html>

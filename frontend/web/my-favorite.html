@@ -68,7 +68,7 @@ https://templatemo.com/tm-590-topic-listing
                             <li><a class="dropdown-item" href="profile.html">View Profile</a></li>
                             <li><a class="dropdown-item" href="my-favorite.html">My Favorites</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Log Out</a></li>
+                            <li><a class="dropdown-item" href="#" id="logoutBtn">Log Out</a></li>
                         </ul>
                     </div>
                 </div>
@@ -108,83 +108,16 @@ https://templatemo.com/tm-590-topic-listing
                 <h3 class="mb-4">Saved Documents & Topics</h3>
             </div>
 
-            <div class="col-lg-8 col-12 mt-3 mx-auto">
-                
-                <div class="custom-block custom-block-topics-listing bg-white shadow-lg mb-4">
-                    <div class="d-flex align-items-center">
-                        <img src="images/topics/undraw_Remote_design_team_re_urdx.png" class="custom-block-image img-fluid" alt="">
-
-                        <div class="custom-block-topics-listing-info d-flex flex-column justify-content-center w-100">
-                            <div>
-                                <h5 class="mb-2">Academic Calendar 2025</h5>
-                                <p class="mb-0 text-muted small">Important dates for semester 1/2025, exam schedules.</p>
-
-                                <div class="btn-action-group">
-                                    <a href="#" class="btn custom-btn btn-action">Read Now</a>
-                                    <a href="#" class="btn btn-remove btn-action">
-                                        <i class="bi-trash me-2"></i>Remove
-                                    </a>
-                                </div>
+                <div class="col-lg-8 col-12 mt-3 mx-auto">
+                    <div id="favoriteListContainer">
+                        <div class="text-center py-5">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Loading...</span>
                             </div>
-                            </div>
-                    </div>
-                </div>
-
-                <div class="custom-block custom-block-topics-listing bg-white shadow-lg mb-4">
-                    <div class="d-flex align-items-center">
-                        <img src="images/topics/undraw_online_ad_re_ol62.png" class="custom-block-image img-fluid" alt="">
-
-                        <div class="custom-block-topics-listing-info d-flex flex-column justify-content-center w-100">
-                            <div>
-                                <h5 class="mb-2">HR: Leave Policy Update</h5>
-                                <p class="mb-0 text-muted small">New regulations regarding sick leave and personal business leave.</p>
-
-                                <div class="btn-action-group">
-                                    <a href="#" class="btn custom-btn btn-action">Read Now</a>
-                                    <a href="#" class="btn btn-remove btn-action">
-                                        <i class="bi-trash me-2"></i>Remove
-                                    </a>
-                                </div>
-                            </div>
+                            <p class="mt-2 text-muted">กำลังโหลดรายการโปรดของคุณ...</p>
                         </div>
                     </div>
                 </div>
-
-                <div class="custom-block custom-block-topics-listing bg-white shadow-lg mb-4">
-                    <div class="d-flex align-items-center">
-                        <img src="images/topics/undraw_Podcast_audience_re_4i5q.png" class="custom-block-image img-fluid" alt="">
-
-                        <div class="custom-block-topics-listing-info d-flex flex-column justify-content-center w-100">
-                            <div>
-                                <h5 class="mb-2">Student Activity Budgeting</h5>
-                                <p class="mb-0 text-muted small">Guidelines for proposing budgets for student clubs and events.</p>
-
-                                <div class="btn-action-group">
-                                    <a href="#" class="btn custom-btn btn-action">Read Now</a>
-                                    <a href="#" class="btn btn-remove btn-action">
-                                        <i class="bi-trash me-2"></i>Remove
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            
-            <div class="col-lg-12 col-12">
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination justify-content-center mb-0">
-                        <li class="page-item"><a class="page-link" href="#">Prev</a></li>
-                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                    </ul>
-                </nav>
-            </div>
-
-        </div>
-    </div>
 </section>
     </main>
 
@@ -235,6 +168,7 @@ https://templatemo.com/tm-590-topic-listing
     <script src="js/custom.js"></script>
     <script src="config.js"></script>
     <script src="js/load-global.js"></script> 
+    <script src="js/my-favorite.js"></script>
 
     </body>
 </html>

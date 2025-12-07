@@ -14,6 +14,12 @@
     "title": {
       "type": "string"
     },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "knowledge_items"
+    },
     "slug": {
       "type": "uid",
       "targetField": "title"
@@ -33,11 +39,6 @@
       "relation": "manyToOne",
       "target": "api::doc-type.doc-type",
       "inversedBy": "knowledge_items"
-    },
-    "relatedMajors": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::major.major"
     },
     "content": {
       "type": "blocks"
@@ -76,15 +77,15 @@
       "component": "media.video-source",
       "repeatable": true
     },
-    "category": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::category.category",
-      "inversedBy": "knowledge_items"
-    },
     "views": {
       "type": "integer",
       "default": 0
+    },
+    "favoritedBy": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "favorites"
     }
   }
 }

@@ -632,6 +632,10 @@ export interface ApiKnowledgeItemKnowledgeItem
       Schema.Attribute.Private;
     docType: Schema.Attribute.Relation<'manyToOne', 'api::doc-type.doc-type'>;
     Duration: Schema.Attribute.Integer;
+    favoritedBy: Schema.Attribute.Relation<
+      'manyToMany',
+      'plugin::users-permissions.user'
+    >;
     Languages: Schema.Attribute.Enumeration<['TH', 'EN']>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -641,7 +645,6 @@ export interface ApiKnowledgeItemKnowledgeItem
       Schema.Attribute.Private;
     pageLength: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
-    relatedMajors: Schema.Attribute.Relation<'oneToMany', 'api::major.major'>;
     slug: Schema.Attribute.UID<'title'>;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
@@ -1181,6 +1184,7 @@ export interface PluginUsersPermissionsUser
       'manyToMany',
       'api::knowledge-item.knowledge-item'
     >;
+    buasri_id: Schema.Attribute.String;
     confirmationToken: Schema.Attribute.String & Schema.Attribute.Private;
     confirmed: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     createdAt: Schema.Attribute.DateTime;
@@ -1191,8 +1195,12 @@ export interface PluginUsersPermissionsUser
       Schema.Attribute.SetMinMaxLength<{
         minLength: 6;
       }>;
-    firstname: Schema.Attribute.String;
-    lastname: Schema.Attribute.String;
+    favorites: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::knowledge-item.knowledge-item'
+    >;
+    first_name: Schema.Attribute.String;
+    last_name: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1204,6 +1212,7 @@ export interface PluginUsersPermissionsUser
       Schema.Attribute.SetMinMaxLength<{
         minLength: 6;
       }>;
+    position: Schema.Attribute.String;
     provider: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     resetPasswordToken: Schema.Attribute.String & Schema.Attribute.Private;
